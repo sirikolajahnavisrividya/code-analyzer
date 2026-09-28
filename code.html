@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-surface-variant":"#b9cacb","secondary-container":"#0566d9","background":"#0f131c","on-secondary":"#002e6a","on-primary-fixed":"#002022","on-tertiary-fixed-variant":"#005236","on-surface":"#dfe2ef","primary-fixed":"#7df4ff","on-secondary-fixed":"#001a42","surface-container-low":"#181b25","tertiary-container":"#65f2b5","surface-variant":"#31353f","tertiary":"#d8ffe7","primary-fixed-dim":"#00dbe9","surface":"#0f131c","on-background":"#dfe2ef","on-primary":"#00363a","secondary-fixed-dim":"#adc6ff","inverse-surface":"#dfe2ef","on-primary-container":"#006970","inverse-on-surface":"#2c303a","inverse-primary":"#006970","surface-container-highest":"#31353f","on-tertiary-fixed":"#002113","on-error":"#690005","surface-tint":"#00dbe9","primary":"#dbfcff","on-secondary-fixed-variant":"#004395","error-container":"#93000a","tertiary-fixed":"#6ffbbe","on-tertiary-container":"#006d4a","outline-variant":"#3b494b","outline":"#849495","surface-dim":"#0f131c","on-secondary-container":"#e6ecff","tertiary-fixed-dim":"#4edea3","surface-container-high":"#262a34","on-error-container":"#ffdad6","primary-container":"#00f0ff","on-tertiary":"#003824","secondary-fixed":"#d8e2ff","surface-bright":"#353943","surface-container-lowest":"#0a0e17","surface-container":"#1c1f29","on-primary-fixed-variant":"#004f54","secondary":"#adc6ff","error":"#ffb4ab"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"space-md":"0.75rem","margin-md":"1.5rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter-lg":"1.5rem","margin-lg":"2.5rem","space-lg":"1.25rem",gutter:"1rem","space-xl":"2rem","space-2xl":"3rem",margin:"1rem"},fontFamily:{"headline-lg":["Plus Jakarta Sans"],"code-block":["JetBrains Mono"],"body-md":["Inter"],"code-inline":["JetBrains Mono"],"headline-lg-mobile":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-md":["JetBrains Mono"],"display-hero":["Plus Jakarta Sans"],"body-sm":["Inter"],"label-sm":["JetBrains Mono"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Inter"]},fontSize:{"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"600"}],"code-block":["13px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"body-md":["14px",{lineHeight:"22px",letterSpacing:"0em",fontWeight:"400"}],"code-inline":["13px",{lineHeight:"20px",letterSpacing:"-0.01em",fontWeight:"500"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.02em",fontWeight:"600"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"display-hero":["48px",{lineHeight:"56px",letterSpacing:"-0.03em",fontWeight:"700"}],"body-sm":["12px",{lineHeight:"18px",letterSpacing:"0.005em",fontWeight:"400"}],"label-sm":["10px",{lineHeight:"14px",letterSpacing:"0.06em",fontWeight:"600"}],"headline-sm":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"26px",letterSpacing:"-0.005em",fontWeight:"400"}]}}}};</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest/90 backdrop-blur-2xl z-50 flex flex-col justify-between py-space-lg px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex flex-col gap-space-lg"><div class="flex items-center gap-space-md px-space-xs"><div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center shadow-[0_0_16px_rgba(0,240,255,0.3)]"><span class="material-symbols-outlined text-primary-container text-[20px]">hexagon</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">CodeSentinel</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">AI Neural Core</span></div></div><div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>ENGINES OK</span><span class="font-label-sm text-label-sm text-tertiary-fixed-dim">&lt;12ms</span></div><div class="font-label-sm text-label-sm text-on-surface-variant truncate">Sandbox v2.4 (Isolated)</div></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-headline-sm rounded-lg"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="live-audit" href="#"><span class="material-symbols-outlined text-[18px]">terminal</span><span class="font-body-md text-body-md">Live Audit</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="diff-inspector" href="#"><span class="material-symbols-outlined text-[18px]">difference</span><span class="font-body-md text-body-md">Diff Inspector</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="editor-compiler" href="#"><span class="material-symbols-outlined text-[18px]">code</span><span class="font-body-md text-body-md">Editor &amp; Compiler</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="knowledge-hub" href="#"><span class="material-symbols-outlined text-[18px]">auto_stories</span><span class="font-body-md text-body-md">Knowledge Hub</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="vulnerability-radar" href="#"><span class="material-symbols-outlined text-[18px]">shield</span><span class="font-body-md text-body-md">Vulnerabilities</span></a></nav></div><div class="flex flex-col gap-space-sm pt-space-md"><div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">keyboard</span><span class="font-label-sm text-label-sm">Run Code</span></div><span class="font-code-inline text-code-inline bg-surface-container px-1.5 py-0.5 rounded text-primary">⌘+↵</span></div><div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px]">bolt</span><span class="font-label-sm text-label-sm">AI Review</span></div><span class="font-code-inline text-code-inline bg-surface-container px-1.5 py-0.5 rounded text-primary">⌘+⇧+R</span></div><div class="flex items-center justify-between px-space-xs pt-space-xs text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">cable</span><span class="font-label-sm text-label-sm text-on-surface">github/synapse</span></div><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.3)] z-40 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-lg"><nav class="flex items-center gap-space-md" data-active-classes="text-primary-container font-headline-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="live-audit" href="#">Live Audit</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="diff-inspector" href="#">Diff Inspector</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="editor-compiler" href="#">Editor</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="knowledge-hub" href="#">Knowledge Hub</a></nav><div class="hidden xl:flex items-center gap-space-xs bg-surface-container px-space-sm py-1 rounded"><span class="font-label-sm text-label-sm text-on-surface-variant">LANG</span><span class="font-code-inline text-code-inline text-primary">TypeScript 5.4</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded"><span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">wifi_tethering</span><span class="font-label-sm text-label-sm text-on-surface-variant">Telemetry:</span><span class="font-code-inline text-code-inline text-tertiary-container">9ms</span></div><div class="flex items-center gap-space-xs text-on-surface-variant"><button aria-label="Audio cues toggle" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">volume_up</span></button><button aria-label="Theme palette toggle" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">dark_mode</span></button><button aria-label="System settings" class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">settings</span></button></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface w-full px-gutter min-h-screen"><div class="flex flex-col w-full text-on-surface font-body-md">
+<!-- Ambient Volumetric Lighting Glows (Contained) -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/3 -right-20 w-80 h-80 bg-secondary-container/15 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- 1. HERO & STATUS HEADER -->
+<header class="relative pt-6 pb-8 px-gutter-lg flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping"></span>
+              Neural Audit Engine v4.8
+            </span>
+<span class="text-on-surface-variant font-label-sm text-label-sm font-code-inline">ID: CS-9804-AST</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight">
+            AI Code <span class="text-primary-container">Reviewer</span>
+</h1>
+<div class="flex items-center gap-3">
+<p class="font-headline-sm text-headline-sm text-primary tracking-tight">Write. Run. Understand. Improve.</p>
+<span class="text-outline-variant font-label-md">/</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Analyze your code for security, quality and performance — then understand exactly how to improve it.
+            </p>
+</div>
+</div>
+<!-- Metric Badges Row -->
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container">layers</span>
+<span class="font-label-md text-label-md">14 Supported Runtimes</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">memory</span>
+<span class="font-label-md text-label-md">Isolated Sandbox</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">psychology</span>
+<span class="font-label-md text-label-md">AST + Neural Insights</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">enhanced_encryption</span>
+<span class="font-label-md text-label-md">Zero Telemetry Leaks</span>
+</div>
+</div>
+</div>
+</header>
+<!-- 2. WORKSPACE CANVAS: DUAL-PANE WORKBENCH -->
+<section class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg px-gutter-lg pb-space-2xl">
+<!-- LEFT COLUMN: CODE EDITOR & SANDBOX TERMINAL (7 cols) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<!-- Editor Container Card -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-xl">
+<!-- Top Control Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm p-space-sm bg-surface-container-low">
+<div class="flex items-center gap-space-sm">
+<!-- Language Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container-high text-primary font-code-inline text-code-inline pl-3 pr-8 py-1.5 rounded-lg focus:outline-none focus:bg-surface-bright cursor-pointer transition-colors" id="lang-select">
+<option selected="" value="python">Python 3.11</option>
+<option value="javascript">JavaScript (ES2024)</option>
+<option value="typescript">TypeScript 5.4</option>
+<option value="java">Java 21 (LTS)</option>
+<option value="c">C (Clang 17)</option>
+<option value="cpp">C++ 20</option>
+<option value="csharp">C# (.NET 8)</option>
+<option value="go">Go 1.22</option>
+<option value="rust">Rust 1.77</option>
+<option value="php">PHP 8.3</option>
+<option value="ruby">Ruby 3.3</option>
+<option value="kotlin">Kotlin 1.9</option>
+<option value="swift">Swift 5.10</option>
+<option value="sql">SQL (PostgreSQL 16)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-on-surface-variant pointer-events-none text-[16px]">expand_more</span>
+</div>
+<!-- File Name Pill -->
+<div class="flex items-center gap-1.5 px-3 py-1 rounded bg-surface-container font-code-inline text-code-inline text-on-surface">
+<span class="material-symbols-outlined text-[15px] text-primary-container" id="file-icon">description</span>
+<span class="font-medium text-primary" id="active-filename">your_code.py</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error" id="file-dirty-indicator" title="Unsaved AST Modifications"></span>
+</div>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-bright transition-all text-body-sm font-body-sm" id="btn-load-sample" type="button">
+<span class="material-symbols-outlined text-[16px]">data_object</span>
+<span>Load Sample</span>
+</button>
+<button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-bright transition-all text-body-sm font-body-sm" id="btn-reset" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface hover:text-primary-container hover:bg-surface-bright transition-all text-body-sm font-body-sm font-semibold shadow-sm" id="btn-run" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">play_arrow</span>
+<span>Run</span>
+<span class="font-code-inline text-label-sm text-on-surface-variant bg-surface-container-lowest px-1 rounded">⌘↵</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-body-sm font-bold shadow-lg hover:shadow-[0_0_20px_rgba(0,240,255,0.45)] transition-all" id="btn-review" type="button">
+<span class="material-symbols-outlined text-[16px]">auto_fix_high</span>
+<span>Review Code</span>
+<span class="font-code-inline text-label-sm text-on-primary-fixed bg-primary/30 px-1 rounded">⌘⇧R</span>
+</button>
+</div>
+</div>
+<!-- Monaco Style Editor Buffer -->
+<div class="relative flex min-h-[380px] bg-surface-container-lowest font-code-block text-code-block text-on-surface select-text overflow-x-auto">
+<!-- Line Numbers & Annotation Gutter -->
+<div class="flex flex-col py-3 px-3 bg-surface-container-lowest/80 text-outline select-none text-right font-code-block text-body-sm">
+<span class="hover:text-on-surface">1</span>
+<span class="hover:text-on-surface">2</span>
+<span class="hover:text-on-surface">3</span>
+<span class="hover:text-on-surface">4</span>
+<span class="hover:text-on-surface">5</span>
+<span class="hover:text-on-surface">6</span>
+<span class="hover:text-on-surface">7</span>
+<!-- Line 8 Security Warning Gutter Dot -->
+<span class="relative text-error font-bold flex items-center justify-end gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>8
+              </span>
+<span class="hover:text-on-surface">9</span>
+<span class="hover:text-on-surface">10</span>
+<span class="hover:text-on-surface">11</span>
+<span class="hover:text-on-surface">12</span>
+<span class="hover:text-on-surface">13</span>
+<!-- Line 14 Performance Warning -->
+<span class="text-tertiary-fixed-dim font-bold flex items-center justify-end gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>14
+              </span>
+<span class="hover:text-on-surface">15</span>
+<span class="hover:text-on-surface">16</span>
+<span class="hover:text-on-surface">17</span>
+<!-- Line 18 Quality Warning -->
+<span class="text-secondary font-bold flex items-center justify-end gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>18
+              </span>
+<span class="hover:text-on-surface">19</span>
+<span class="hover:text-on-surface">20</span>
+<span class="hover:text-on-surface">21</span>
+</div>
+<!-- Code Buffer Content with Highlighting -->
+<div class="py-3 px-4 flex-1 flex flex-col leading-[22px] whitespace-pre font-code-block" id="editor-lines">
+<div><span class="text-secondary font-semibold">import</span> sqlite3</div>
+<div><span class="text-secondary font-semibold">from</span> flask <span class="text-secondary font-semibold">import</span> request</div>
+<div class="text-outline"></div>
+<div><span class="text-primary-container font-semibold">def</span> <span class="text-primary">get_user_profile</span>(user_id):</div>
+<div class="text-outline-variant italic"> <span class="text-error/80"># ⚠️ SECURITY VULNERABILITY: Raw string concatenation in SQL</span></div>
+<div>    conn = sqlite3.connect(<span class="text-tertiary">"users.db"</span>)</div>
+<div>    cursor = conn.cursor()</div>
+<!-- Highlighted Vulnerable Line -->
+<div class="bg-error-container/20 px-1 -mx-1 rounded flex items-center justify-between group">
+<span>    query = <span class="text-tertiary">"SELECT * FROM users WHERE id = '"</span> + user_id + <span class="text-tertiary">"'"</span></span>
+<span class="font-label-sm text-label-sm text-error bg-error-container/50 px-1.5 py-0.5 rounded opacity-90">SQL_INJECTION_CWE_89</span>
+</div>
+<div>    cursor.execute(query)</div>
+<div>    result = cursor.fetchall()</div>
+<div class="text-outline"></div>
+<div class="text-outline-variant italic"> <span class="text-secondary/80"># ⚠️ PERFORMANCE &amp; QUALITY: Inefficient nested iteration &amp; bare except</span></div>
+<div>    processed = []</div>
+<!-- Highlighted Performance Line -->
+<div class="bg-secondary-container/20 px-1 -mx-1 rounded"> <span class="text-secondary">try</span>:</div>
+<div class="bg-secondary-container/20 px-1 -mx-1 rounded"> <span class="text-secondary">for</span> row <span class="text-secondary">in</span> result:</div>
+<div class="bg-secondary-container/20 px-1 -mx-1 rounded"> <span class="text-secondary">for</span> item <span class="text-secondary">in</span> row:</div>
+<div class="bg-secondary-container/20 px-1 -mx-1 rounded"> <span class="text-secondary">if</span> item <span class="text-secondary">not in</span> processed:</div>
+<div class="bg-secondary-container/20 px-1 -mx-1 rounded">                    processed.append(item)</div>
+<!-- Highlighted Bare Except Line -->
+<div class="bg-surface-variant px-1 -mx-1 rounded flex items-center justify-between">
+<span> <span class="text-secondary">except</span>:</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-1 rounded">BARE_EXCEPT_W0702</span>
+</div>
+<div> <span class="text-secondary">pass</span></div>
+<div> <span class="text-secondary">return</span> processed</div>
+</div>
+<!-- Editor Mini-Map Simulation -->
+<div class="w-14 bg-surface-container-low/40 p-1.5 select-none hidden md:flex flex-col gap-1 items-stretch opacity-60">
+<div class="h-1 bg-secondary rounded w-2/3"></div>
+<div class="h-1 bg-secondary rounded w-1/2"></div>
+<div class="h-2"></div>
+<div class="h-1 bg-primary-container rounded w-4/5"></div>
+<div class="h-1 bg-error rounded w-full"></div>
+<div class="h-1 bg-outline rounded w-1/2"></div>
+<div class="h-1 bg-outline rounded w-3/4"></div>
+<div class="h-1 bg-error rounded w-full shadow-[0_0_4px_rgba(239,68,68,0.8)]"></div>
+<div class="h-1 bg-outline rounded w-2/3"></div>
+<div class="h-1 bg-outline rounded w-1/2"></div>
+<div class="h-2"></div>
+<div class="h-1 bg-secondary-container rounded w-5/6"></div>
+<div class="h-1 bg-secondary-container rounded w-3/4"></div>
+<div class="h-1 bg-surface-variant rounded w-1/2"></div>
+<div class="h-1 bg-surface-variant rounded w-1/3"></div>
+</div>
+</div>
+<!-- Editor Footer Status Bar -->
+<div class="flex flex-wrap items-center justify-between px-3 py-1.5 bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span>
+                Ln 8, Col 42
+              </span>
+<span>Spaces: 4</span>
+<span>UTF-8</span>
+<span class="text-primary font-medium">Python 3.11 AST Verified</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="text-tertiary-fixed-dim">Sandboxed Execution: ISOLATED</span>
+</div>
+</div>
+</div>
+<!-- B. PROGRAM OUTPUT & EXECUTION TERMINAL DOCK -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest overflow-hidden shadow-xl">
+<!-- Terminal Header Tabs -->
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2">
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded-md bg-surface-container text-primary font-label-md text-label-md font-semibold flex items-center gap-1.5 transition-all" id="tab-stdout-btn">
+<span class="material-symbols-outlined text-[15px] text-tertiary-fixed-dim">terminal</span>
+                Program Output (STDOUT/STDERR)
+              </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all flex items-center gap-1.5" id="tab-telemetry-btn">
+<span class="material-symbols-outlined text-[15px]">speed</span>
+                Execution Telemetry
+              </button>
+</div>
+<!-- Terminal Execution Pill -->
+<div class="flex items-center gap-2 font-label-sm text-label-sm">
+<span class="px-2 py-0.5 rounded bg-tertiary-container/15 text-tertiary font-code-inline font-medium">Exit: 0</span>
+<span class="text-on-surface-variant font-code-inline">42ms</span>
+<span class="text-on-surface-variant font-code-inline">14.2MB</span>
+</div>
+</div>
+<!-- Console Terminal Canvas -->
+<div class="p-3.5 font-code-block text-code-block leading-[20px] bg-surface-container-lowest text-on-surface flex flex-col gap-1 min-h-[140px]" id="terminal-stdout">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="text-tertiary-container font-semibold">[sandbox@worker-04 ~]$</span>
+<span class="text-primary">python3 your_code.py --test-id "105"</span>
+</div>
+<div class="text-outline-variant font-label-md">[DEBUG] Initializing in-memory SQLite schema and tables...</div>
+<div class="text-outline-variant font-label-md">[DEBUG] Executing query: SELECT * FROM users WHERE id = '105'</div>
+<div class="text-tertiary font-medium">[OUTPUT] Record fetched successfully: ('105', 'Admin_Jahnavi', 'SecOps')</div>
+<div class="text-tertiary-fixed-dim">[OUTPUT] Processed sanitized payload items: 3 unique attributes returned.</div>
+<div class="flex items-center gap-2 pt-1 text-on-surface-variant">
+<span class="text-primary-container font-code-inline">[EXECUTION COMPLETE]</span>
+<span class="font-code-inline text-tertiary-fixed">Duration: 0.042s</span>
+<span class="font-code-inline text-outline">|</span>
+<span class="font-code-inline text-on-surface">Peak Mem: 14.2 MB / 64 MB ceiling</span>
+</div>
+<div class="flex items-center gap-1 text-primary-container pt-1">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+<span class="animate-pulse font-bold">_</span>
+</div>
+</div>
+<!-- Telemetry Hidden Panel -->
+<div class="hidden p-4 bg-surface-container-lowest grid grid-cols-2 sm:grid-cols-4 gap-3" id="terminal-telemetry">
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">WALL CLOCK</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">42.1 ms</span>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim">&lt; 15% system threshold</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">MEMORY CEILING</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">14.2 MB</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Max Alloc: 64.0 MB</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">AST NODE COUNT</span>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">37 Nodes</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">Grammar verified</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SANDBOX CONFINEMENT</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">seccomp</span>
+<span class="font-label-sm text-label-sm text-tertiary-container">Zero Socket Access</span>
+</div>
+</div>
+<!-- Terminal Isolation Disclaimer Footer -->
+<div class="px-3 py-1.5 bg-surface-container-low flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">verified_user</span>
+              Execution isolated in ephemeral firecracker microVM. No external egress permitted.
+            </span>
+<span class="text-outline">Worker: vm-us-east-4a</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: AUDIT SUITE, METRICS & EDUCATIONAL DEEP-DIVE (5 cols) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md">
+<!-- 3A. SCORE & HEALTH SUMMARY CARDS -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-xl bg-surface-container-low shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[20px]">analytics</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Audit Intelligence Summary</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-code-inline">PASS 1/1</span>
+</div>
+<!-- Score Matrix Bento -->
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-space-sm pt-2">
+<!-- Quality Gauge Card -->
+<div class="sm:col-span-5 bg-surface-container p-3 rounded-lg flex flex-col items-center justify-center relative overflow-hidden">
+<div class="relative w-28 h-28 flex items-center justify-center">
+<!-- SVG Gauge -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-bright" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary-container" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="65" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-display-hero text-headline-lg font-bold text-on-surface">74</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant -mt-1">/ 100 PTS</span>
+</div>
+</div>
+<span class="font-label-md text-label-md font-semibold text-primary mt-1">Acceptable with Flaws</span>
+</div>
+<!-- Health Highlights -->
+<div class="sm:col-span-7 flex flex-col justify-between gap-2">
+<div class="bg-surface-container p-2.5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium">Syntax Status</span>
+</div>
+<span class="font-code-inline text-body-sm text-tertiary-fixed-dim">AST Verified</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded-lg flex items-center justify-between" title="Estimated based on static code structure AST parsing">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">functions</span>
+<span class="font-body-sm text-body-sm font-medium">Complexity</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-code-inline text-body-sm text-secondary font-bold">O(n²) Quadratic</span>
+<span class="material-symbols-outlined text-outline text-[14px] cursor-help">info</span>
+</div>
+</div>
+<div class="bg-surface-container p-2.5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px]">gpp_maybe</span>
+<span class="font-body-sm text-body-sm font-medium">Security Posture</span>
+</div>
+<span class="font-code-inline text-body-sm text-error font-bold">1 CVE Found</span>
+</div>
+</div>
+</div>
+<!-- Filter Tabs for Issues -->
+<div class="flex flex-wrap items-center gap-1.5 pt-3">
+<button class="px-2.5 py-1 rounded-md bg-surface-bright text-primary font-label-md text-label-md font-semibold transition-all" id="filter-all">
+              All (3 Issues)
+            </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all" id="filter-sec">
+              Security (1 Critical)
+            </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all" id="filter-perf">
+              Performance (1 Warning)
+            </button>
+<button class="px-2.5 py-1 rounded-md text-on-surface-variant hover:bg-surface-container font-label-md text-label-md transition-all" id="filter-qual">
+              Quality (1 Notice)
+            </button>
+</div>
+</div>
+<!-- 3B. DETECTED ISSUES BREAKDOWN -->
+<div class="flex flex-col gap-space-sm" id="issues-container">
+<!-- ISSUE 1: SQL Injection (CRITICAL) -->
+<div class="issue-card security flex flex-col p-space-md rounded-xl bg-surface-container-low shadow-lg transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold tracking-wide uppercase">
+                  Critical
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-error font-label-sm text-label-sm font-semibold">
+                  SECURITY
+                </span>
+<span class="text-on-surface-variant font-code-inline text-label-sm">Line 8</span>
+</div>
+<span class="text-error font-code-inline text-label-sm font-semibold">CWE-89</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Possible SQL Injection via String Concatenation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              User input is directly interpolated into the SQL statement without escaping or parameter binding, enabling malicious input to execute arbitrary queries, bypass authentication, or drop database tables.
+            </p>
+<!-- Code Comparison Block -->
+<div class="flex flex-col gap-2 mt-3 pt-2 bg-surface-container-lowest p-2.5 rounded-lg font-code-block text-code-block">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-error font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">remove_circle</span> Vulnerable Code (Line 8):
+                </span>
+<div class="bg-error-container/20 text-on-surface p-1.5 rounded line-through decoration-error text-body-sm">
+                  query = "SELECT * FROM users WHERE id = '" + user_id + "'"
+                </div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-tertiary-container font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add_circle</span> Recommended Parameterized Fix:
+                </span>
+<div class="bg-tertiary-container/15 text-tertiary p-1.5 rounded text-body-sm">
+                  query = "SELECT * FROM users WHERE id = ?"<br/>cursor.execute(query, (user_id,))
+                </div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2">
+<button class="btn-apply-fix flex items-center gap-1 text-primary-container hover:text-primary font-label-md text-label-md font-semibold transition-colors" data-fix="sql" type="button">
+<span class="material-symbols-outlined text-[16px]">build_circle</span>
+<span>Apply Fix to Editor</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Confidence: 99.4%</span>
+</div>
+</div>
+<!-- ISSUE 2: Quadratic Loop (PERFORMANCE) -->
+<div class="issue-card performance flex flex-col p-space-md rounded-xl bg-surface-container-low shadow-lg transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold tracking-wide uppercase">
+                  Medium
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold">
+                  PERFORMANCE
+                </span>
+<span class="text-on-surface-variant font-code-inline text-label-sm">Lines 14-17</span>
+</div>
+<span class="text-secondary font-code-inline text-label-sm font-semibold">O(n²) COMPLEXITY</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Inefficient Quadratic O(n²) List Deduplication</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Using <code class="bg-surface-container px-1 py-0.5 rounded text-primary">item not in list</code> inside nested loops forces an O(n) scan for each check, degrading latency exponentially on larger payloads.
+            </p>
+<div class="flex flex-col gap-2 mt-3 pt-2 bg-surface-container-lowest p-2.5 rounded-lg font-code-block text-code-block">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-error font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">remove_circle</span> Nested O(n²) Loop:
+                </span>
+<div class="bg-error-container/20 text-on-surface p-1.5 rounded text-body-sm">
+                  for row in result: for item in row: if item not in processed: processed.append(item)
+                </div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-tertiary-container font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add_circle</span> Hash-Set Linear Alternative:
+                </span>
+<div class="bg-tertiary-container/15 text-tertiary p-1.5 rounded text-body-sm">
+                  processed = list(dict.fromkeys(item for row in result for item in row))
+                </div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2">
+<button class="btn-apply-fix flex items-center gap-1 text-primary-container hover:text-primary font-label-md text-label-md font-semibold transition-colors" data-fix="perf" type="button">
+<span class="material-symbols-outlined text-[16px]">build_circle</span>
+<span>Apply Fix to Editor</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Complexity gain: ~88% faster</span>
+</div>
+</div>
+<!-- ISSUE 3: Bare Except Clause (QUALITY) -->
+<div class="issue-card quality flex flex-col p-space-md rounded-xl bg-surface-container-low shadow-lg transition-all hover:bg-surface-container">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-surface-variant text-on-surface-variant font-label-sm text-label-sm font-bold tracking-wide uppercase">
+                  Notice
+                </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+                  CODE QUALITY
+                </span>
+<span class="text-on-surface-variant font-code-inline text-label-sm">Line 18</span>
+</div>
+<span class="text-on-surface-variant font-code-inline text-label-sm font-semibold">PEP-E722</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Broad Exception Catching (<span class="font-code-inline text-error">bare except:</span>)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Catches system-exiting exceptions like <code class="text-primary font-code-inline">KeyboardInterrupt</code>, <code class="text-primary font-code-inline">SystemExit</code>, and memory errors, making silent failures impossible to triage.
+            </p>
+<div class="flex flex-col gap-2 mt-3 pt-2 bg-surface-container-lowest p-2.5 rounded-lg font-code-block text-code-block">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-tertiary-container font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add_circle</span> Typed Catching &amp; Logging:
+                </span>
+<div class="bg-tertiary-container/15 text-tertiary p-1.5 rounded text-body-sm">
+                  except sqlite3.Error as err:<br/>    logger.error("DB query failure: %s", err)
+                </div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2">
+<button class="btn-apply-fix flex items-center gap-1 text-primary-container hover:text-primary font-label-md text-label-md font-semibold transition-colors" data-fix="except" type="button">
+<span class="material-symbols-outlined text-[16px]">build_circle</span>
+<span>Apply Fix to Editor</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Recommended by PEP-8</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. IMPROVED CODE & SIDE-BY-SIDE DIFF COMPARISON SECTION -->
+<section class="px-gutter-lg pb-space-xl">
+<div class="flex flex-col rounded-xl bg-surface-container-lowest shadow-2xl overflow-hidden">
+<!-- Tab Bar Header -->
+<div class="flex flex-wrap items-center justify-between bg-surface-container-low px-4 py-3">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-primary font-headline-sm text-body-sm font-semibold flex items-center gap-2 transition-all" id="diff-tab-side">
+<span class="material-symbols-outlined text-[18px]">difference</span>
+              Compare Code (Diff View)
+            </button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-headline-sm text-body-sm transition-all flex items-center gap-2" id="diff-tab-clean">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+              Clean Improved Version
+            </button>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface text-body-sm font-body-sm transition-all" id="btn-copy-code" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span id="copy-btn-text">Copy Improved Code</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-bold shadow-md hover:bg-primary-container transition-all" id="btn-apply-all" type="button">
+<span class="material-symbols-outlined text-[16px]">system_update_alt</span>
+<span>Apply All to Editor</span>
+</button>
+</div>
+</div>
+<!-- Diff Body: Unified / Split View -->
+<div class="p-4 bg-surface-container-lowest font-code-block text-code-block text-on-surface overflow-x-auto" id="diff-view-content">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<!-- Left: Original Vulnerable -->
+<div class="flex flex-col bg-surface-container-low/70 rounded-lg p-3">
+<div class="flex items-center justify-between pb-2 mb-2 text-error font-label-md text-label-md font-semibold">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">history</span>
+                  Original (your_code.py)
+                </span>
+<span>3 Defects</span>
+</div>
+<pre class="font-code-block text-body-sm leading-[22px] whitespace-pre text-on-surface-variant"><code>import sqlite3
+from flask import request
+
+def get_user_profile(user_id):
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+<div class="bg-error-container/20 text-error line-through -mx-2 px-2 rounded">    query = "SELECT * FROM users WHERE id = '" + user_id + "'"</div>    cursor.execute(query)
+    result = cursor.fetchall()
+    
+    processed = []
+<div class="bg-error-container/20 text-error line-through -mx-2 px-2 rounded">    try:
+        for row in result:
+            for item in row:
+                if item not in processed:
+                    processed.append(item)
+    except:
+        pass</div>    return processed</code></pre>
+</div>
+<!-- Right: Improved Code -->
+<div class="flex flex-col bg-surface-container-low/70 rounded-lg p-3">
+<div class="flex items-center justify-between pb-2 mb-2 text-tertiary-fixed-dim font-label-md text-label-md font-semibold">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                  Optimized &amp; Hardened
+                </span>
+<span class="text-tertiary font-bold">100 / 100 Score</span>
+</div>
+<pre class="font-code-block text-body-sm leading-[22px] whitespace-pre text-on-surface"><code>import sqlite3
+import logging
+from flask import request
+
+logger = logging.getLogger(__name__)
+
+def get_user_profile(user_id: str) -&gt; list:
+    conn = sqlite3.connect("users.db")
+    cursor = conn.cursor()
+<div class="bg-tertiary-container/15 text-tertiary font-semibold -mx-2 px-2 rounded">    # Hardened: Parameterized Prepared Statement (Prevents SQLi)
+    query = "SELECT * FROM users WHERE id = ?"
+    cursor.execute(query, (user_id,))</div>    result = cursor.fetchall()
+    
+<div class="bg-tertiary-container/15 text-tertiary font-semibold -mx-2 px-2 rounded">    # Optimized: O(n) Ordered Deduplication with dict.fromkeys()
+    try:
+        return list(dict.fromkeys(item for row in result for item in row))
+    except (sqlite3.Error, TypeError) as err:
+        logger.error("Profile extraction fault: %s", err)
+        return []</div></code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. LEARNING MODE ('Learn From This Review') -->
+<section class="px-gutter-lg pb-space-2xl">
+<div class="flex flex-col p-space-lg rounded-xl bg-surface-container-low shadow-xl gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Learn From This Review</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Contextual curriculum generated straight from your code AST</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-surface-container-high text-primary font-code-inline">
+            3 Deep-Dive Modules Available
+          </span>
+</div>
+<!-- Interactive Accordion Cards -->
+<div class="flex flex-col gap-3" id="accordion-group">
+<!-- Accordion 1 -->
+<div class="accordion-item rounded-lg bg-surface-container overflow-hidden transition-all">
+<button class="accordion-trigger w-full px-4 py-3 flex items-center justify-between text-left hover:bg-surface-bright transition-colors" type="button">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-primary font-bold">01</span>
+<span class="font-headline-sm text-body-lg font-semibold text-on-surface">What is SQL Injection &amp; The Principle of Parameterization</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="accordion-content px-5 py-4 bg-surface-container-lowest/60 text-on-surface-variant text-body-md flex flex-col gap-2">
+<p>
+                When an application constructs SQL queries using raw string concatenation (such as <code class="text-error font-code-inline">query = "SELECT ... " + user_input</code>), an attacker can inject malicious syntax like <code class="text-error font-code-inline">' OR '1'='1' --</code>. This rewrites the query logic, granting unauthorized access to private data.
+              </p>
+<p class="text-on-surface font-medium">
+<strong>The Fix:</strong> Prepared statements separate the SQL code structure from untrusted user data. The database compiles the query schema first, then binds the arguments strictly as raw literals, preventing execution of injected commands.
+              </p>
+</div>
+</div>
+<!-- Accordion 2 -->
+<div class="accordion-item rounded-lg bg-surface-container overflow-hidden transition-all">
+<button class="accordion-trigger w-full px-4 py-3 flex items-center justify-between text-left hover:bg-surface-bright transition-colors" type="button">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-secondary font-bold">02</span>
+<span class="font-headline-sm text-body-lg font-semibold text-on-surface">Algorithmic Complexity: Why O(n²) Fails at Scale</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="accordion-content hidden px-5 py-4 bg-surface-container-lowest/60 text-on-surface-variant text-body-md flex flex-col gap-2">
+<p>
+                In your original code, running <code class="text-secondary font-code-inline">if item not in processed:</code> scans the entire <code class="text-secondary font-code-inline">processed</code> array from beginning to end for each of the nested rows. If your database table returns 10,000 items, this triggers up to 100,000,000 comparison operations.
+              </p>
+<p class="text-on-surface font-medium">
+<strong>The Solution:</strong> Python's hash tables (such as <code class="text-primary font-code-inline">set()</code> or <code class="text-primary font-code-inline">dict.fromkeys()</code>) provide <strong class="text-tertiary">O(1) amortized constant lookup</strong>. The total operation drops down from 100,000,000 steps to just 10,000 steps, cutting response times from seconds to sub-milliseconds.
+              </p>
+</div>
+</div>
+<!-- Accordion 3 -->
+<div class="accordion-item rounded-lg bg-surface-container overflow-hidden transition-all">
+<button class="accordion-trigger w-full px-4 py-3 flex items-center justify-between text-left hover:bg-surface-bright transition-colors" type="button">
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-tertiary font-bold">03</span>
+<span class="font-headline-sm text-body-lg font-semibold text-on-surface">Defensive Exception Handling in Production Systems</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="accordion-content hidden px-5 py-4 bg-surface-container-lowest/60 text-on-surface-variant text-body-md flex flex-col gap-2">
+<p>
+                Using a bare <code class="text-error font-code-inline">except:</code> block swallows all errors indiscriminately. It intercepts memory overflows, OS interrupt signals, and logic typos without generating a stack trace or log entry.
+              </p>
+<p class="text-on-surface font-medium">
+<strong>Best Practice:</strong> Always capture explicit, domain-specific exception types (e.g., <code class="text-primary font-code-inline">except sqlite3.DatabaseError:</code>), emit a telemetry event to your observability collector, and guarantee safe fallback defaults.
+              </p>
+</div>
+</div>
+</div>
+<!-- What You Learned Checklist Footer -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest/80 flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">verified_user</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">What You Learned (Key Takeaways)</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-1">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Parameterize queries:</strong> Always isolate SQL commands from untrusted variables with prepared placeholders.
+              </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>O(1) hash structures:</strong> Prefer sets or hash-maps over iterative list traversals for deduplication.
+              </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[18px] shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+<strong>Targeted exception trapping:</strong> Never hide failures behind silent <code class="text-primary font-code-inline">pass</code> statements.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Interactive Client-side Script -->
+<script>
+    (function() {
+      // Language mappings & sample files
+      const langConfig = {
+        python: { ext: 'your_code.py', icon: 'terminal' },
+        javascript: { ext: 'your_code.js', icon: 'javascript' },
+        typescript: { ext: 'your_code.ts', icon: 'code' },
+        java: { ext: 'UserService.java', icon: 'coffee' },
+        c: { ext: 'main.c', icon: 'memory' },
+        cpp: { ext: 'main.cpp', icon: 'memory' },
+        csharp: { ext: 'Program.cs', icon: 'view_cozy' },
+        go: { ext: 'handler.go', icon: 'data_object' },
+        rust: { ext: 'lib.rs', icon: 'settings_suggest' },
+        php: { ext: 'api.php', icon: 'php' },
+        ruby: { ext: 'controller.rb', icon: 'diamond' },
+        kotlin: { ext: 'App.kt', icon: 'phone_android' },
+        swift: { ext: 'QueryModel.swift', icon: 'apple' },
+        sql: { ext: 'audit_query.sql', icon: 'database' }
+      };
+
+      const langSelect = document.getElementById('lang-select');
+      const filenameEl = document.getElementById('active-filename');
+      const fileIconEl = document.getElementById('file-icon');
+      const dirtyIndicator = document.getElementById('file-dirty-indicator');
+
+      // Update filename on language change
+      langSelect.addEventListener('change', (e) => {
+        const lang = e.target.value;
+        const meta = langConfig[lang] || { ext: 'snippet.txt', icon: 'description' };
+        filenameEl.textContent = meta.ext;
+        dirtyIndicator.classList.remove('hidden');
+      });
+
+      // Terminal Tab Toggle
+      const tabStdoutBtn = document.getElementById('tab-stdout-btn');
+      const tabTelemetryBtn = document.getElementById('tab-telemetry-btn');
+      const termStdout = document.getElementById('terminal-stdout');
+      const termTelemetry = document.getElementById('terminal-telemetry');
+
+      tabStdoutBtn.addEventListener('click', () => {
+        termStdout.classList.remove('hidden');
+        termTelemetry.classList.add('hidden');
+        tabStdoutBtn.classList.add('bg-surface-container', 'text-primary');
+        tabStdoutBtn.classList.remove('text-on-surface-variant');
+        tabTelemetryBtn.classList.remove('bg-surface-container', 'text-primary');
+        tabTelemetryBtn.classList.add('text-on-surface-variant');
+      });
+
+      tabTelemetryBtn.addEventListener('click', () => {
+        termStdout.classList.add('hidden');
+        termTelemetry.classList.remove('hidden');
+        tabTelemetryBtn.classList.add('bg-surface-container', 'text-primary');
+        tabTelemetryBtn.classList.remove('text-on-surface-variant');
+        tabStdoutBtn.classList.remove('bg-surface-container', 'text-primary');
+        tabStdoutBtn.classList.add('text-on-surface-variant');
+      });
+
+      // Run code simulation
+      const btnRun = document.getElementById('btn-run');
+      btnRun.addEventListener('click', () => {
+        const originalText = btnRun.innerHTML;
+        btnRun.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">progress_activity</span><span>Executing...</span>`;
+        setTimeout(() => {
+          btnRun.innerHTML = originalText;
+          termStdout.innerHTML += `\n<div class="text-tertiary-fixed-dim font-label-md">[TELEMETRY] Hot-reload triggered @ ${new Date().toLocaleTimeString()} - Sandbox re-verified.</div>`;
+          termStdout.scrollTop = termStdout.scrollHeight;
+        }, 600);
+      });
+
+      // Filter Issues tabs
+      const filterAll = document.getElementById('filter-all');
+      const filterSec = document.getElementById('filter-sec');
+      const filterPerf = document.getElementById('filter-perf');
+      const filterQual = document.getElementById('filter-qual');
+      const issueCards = document.querySelectorAll('.issue-card');
+
+      const filterBtns = [filterAll, filterSec, filterPerf, filterQual];
+
+      function setActiveFilter(activeBtn, targetClass) {
+        filterBtns.forEach(btn => {
+          btn.classList.remove('bg-surface-bright', 'text-primary');
+          btn.classList.add('text-on-surface-variant');
+        });
+        activeBtn.classList.add('bg-surface-bright', 'text-primary');
+        activeBtn.classList.remove('text-on-surface-variant');
+
+        issueCards.forEach(card => {
+          if (!targetClass || card.classList.contains(targetClass)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      filterAll.addEventListener('click', () => setActiveFilter(filterAll, null));
+      filterSec.addEventListener('click', () => setActiveFilter(filterSec, 'security'));
+      filterPerf.addEventListener('click', () => setActiveFilter(filterPerf, 'performance'));
+      filterQual.addEventListener('click', () => setActiveFilter(filterQual, 'quality'));
+
+      // Copy improved code button
+      const copyBtn = document.getElementById('btn-copy-code');
+      const copyBtnText = document.getElementById('copy-btn-text');
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard?.writeText(`import sqlite3\nimport logging\n\nlogger = logging.getLogger(__name__)\n\ndef get_user_profile(user_id: str) -> list:\n    conn = sqlite3.connect("users.db")\n    cursor = conn.cursor()\n    query = "SELECT * FROM users WHERE id = ?"\n    cursor.execute(query, (user_id,))\n    result = cursor.fetchall()\n    try:\n        return list(dict.fromkeys(item for row in result for item in row))\n    except (sqlite3.Error, TypeError) as err:\n        logger.error("DB Error: %s", err)\n        return []`);
+        copyBtnText.textContent = 'Copied to Clipboard!';
+        setTimeout(() => {
+          copyBtnText.textContent = 'Copy Improved Code';
+        }, 2200);
+      });
+
+      // Accordion interactions
+      const accordions = document.querySelectorAll('.accordion-item');
+      accordions.forEach(item => {
+        const trigger = item.querySelector('.accordion-trigger');
+        const content = item.querySelector('.accordion-content');
+        const icon = trigger.querySelector('.material-symbols-outlined');
+
+        trigger.addEventListener('click', () => {
+          const isOpen = !content.classList.contains('hidden');
+          accordions.forEach(otherItem => {
+            otherItem.querySelector('.accordion-content').classList.add('hidden');
+            otherItem.querySelector('.material-symbols-outlined').classList.remove('rotate-180');
+          });
+
+          if (!isOpen) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+          }
+        });
+      });
+
+      // Quick fix apply simulation
+      const fixButtons = document.querySelectorAll('.btn-apply-fix');
+      fixButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const originalContent = btn.innerHTML;
+          btn.innerHTML = `<span class="material-symbols-outlined text-[16px] text-tertiary">check</span><span class="text-tertiary">Applied to Buffer</span>`;
+          setTimeout(() => {
+            btn.innerHTML = originalContent;
+          }, 2000);
+        });
+      });
+    })();
+  </script>
+</div></main></div></body></html>
